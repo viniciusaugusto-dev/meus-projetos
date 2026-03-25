@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tarefas</title>
+</head>
+<body>
+
+<h2>Minha Lista</h2>
+
+<input id="tarefa" placeholder="Digite uma tarefa">
+<button onclick="adicionar()">Adicionar</button>
+
+<ul id="lista"></ul>
+
+<script>
+function adicionar() {
+  let input = document.getElementById("tarefa");
+  let tarefa = input.value;
+
+  // impedir vazio
+  if (tarefa.trim() === "") {
+    alert("Digite uma tarefa!");
+    return;
+  }
+
+  let li = document.createElement("li");
+  li.innerText = tarefa;
+
+  document.getElementById("lista").appendChild(li);
+
+  // limpar campo
+  input.value = "";
+
+  // voltar cursor pro input
+  input.focus();
+}
+</script>
+
+</body>
+</html>
